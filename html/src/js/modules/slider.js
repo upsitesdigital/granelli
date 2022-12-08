@@ -27,7 +27,8 @@ export default function() {
     centerMode: false,
     focusOnSelect: true,
     adaptiveHeight: true,
-    centerPadding: 0
+    centerPadding: 0,
+    asNavFor: '.galleries .slide',
   });
   const $galleriesslide = $('.galleries .slide');
   $galleriesslide.slick({
@@ -40,6 +41,7 @@ export default function() {
     centerMode: false,
     focusOnSelect: true,
     adaptiveHeight: true,
-    centerPadding: 0
+    centerPadding: 0,
+    asNavFor: '.galleries .primary',
   });
 }
