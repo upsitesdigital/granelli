@@ -1,0 +1,262 @@
+/*======================================
+  Main structure
+======================================*/
+
+body {
+  background: #333333;
+  // background: url(../images/bg.jpg) top center no-repeat;
+}
+
+.bar-top {
+  text-align: center;
+  padding: 9px 0 7px 0;
+  background: #282828;
+  a {
+    font-family: $font-lexend;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 130%;
+    color: #FFFFFF;
+    display: inline-flex;
+    align-items: center;
+    .icon {
+      width: 22px;
+      height: 22px;
+      margin: 0 4px 0 0;
+      fill: transparent;
+    }
+    &.mail {
+      margin-right: 32px;
+      margin-left: -21px;
+    }
+  }
+}
+
+// header
+header {
+  padding: 10px 0 13px 0;
+  background-color: $color-white;
+  .grid {
+    @include columns( $quant: 160px 1fr 261px, $gutter: 0, $align: center, $template: '');
+    ul {
+      display: flex;
+      justify-content: flex-end;
+      padding: 6px 25px 0 0;
+      li {
+        padding: 0 25px 0 26px;
+        position: relative;
+        &::before {
+          content: '';
+          width: 1px;
+          height: 12px;
+          background-color: $color-orange;
+          position: absolute;
+          top: 3px;
+          left: 0;
+        }
+        a {
+          font-family: $font-main;
+          font-style: normal;
+          font-weight: 800;
+          font-size: 16px;
+          line-height: 130%;
+          color: #333333;
+          display: flex;
+          align-items: center;
+          .icon {
+            width: 10px;
+            height: 10px;
+            margin: 0 7px 0 14px;
+            fill: transparent;
+          }
+        }
+        &:first-child {
+          &::before {
+            display: none;
+          }
+        }
+      }
+    }
+    .cols-03 {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .btn {
+      margin: 4px 0 0 0;
+      width: 163px;
+      height: 42px;
+    }
+    .login {
+      font-family: $font-main;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 15px;
+      line-height: 130%;
+      color: #000000;
+      display: inline-flex;
+      align-items: center;
+      margin: 4px 0px 0 0;
+      &:before {
+        content: '';
+        width: 33px;
+        height: 36px;
+        margin: -2px 6px 0 0;
+        background: url(../img/login.png) top left no-repeat;
+      }
+    }
+  }
+}
+
+@include breakpoint2($min:xl, $max:'') {}
+
+@include breakpoint2($min:lg, $max:xl) {}
+
+@include breakpoint2($min:md, $max:lg) {}
+
+@include breakpoint2($min:sm, $max:md) {}
+
+@include breakpoint2($min:xs, $max:sm) {}
+
+@include breakpoint2($min:'', $max:xs) {}
+
+// end header
+// main
+main {}
+
+@include breakpoint2($min:xl, $max:'') {}
+
+@include breakpoint2($min:lg, $max:xl) {}
+
+@include breakpoint2($min:md, $max:lg) {}
+
+@include breakpoint2($min:sm, $max:md) {}
+
+@include breakpoint2($min:xs, $max:sm) {}
+
+@include breakpoint2($min:'', $max:xs) {}
+
+// end main
+// footer
+footer {
+  padding: 52px 0 0 0;
+  background: #282828;
+  .grid {
+    padding: 0 0 36px 0;
+    border-bottom: 1px solid rgba($color-white, 0.2);
+    @include columns( $quant: 1fr 389px 243px, $gutter: 10px, $align: start, $template: '');
+    .item {
+      .logo {
+        width: 202px;
+        height: 95px;
+        background-color: $color-white;
+        margin: 0 0 0 8px;
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      h5 {
+        font-family: $font-main;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 150%;
+        color: $color-white;
+        padding: 13px 0 8px 0;
+        position: relative;
+        &:before {
+          content: '';
+          width: 16px;
+          height: 1px;
+          background-color: $color-white;
+          position: absolute;
+          top: -8px;
+          left: 0;
+        }
+      }
+      p {
+        font-family: $font-main;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 150%;
+        color: $color-white;
+      }
+    }
+  }
+  .flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 0;
+    &.border {
+      border-bottom: 1px solid rgba($color-white, 0.2);
+    }
+    &.pcustom {
+      padding: 44px 0 25px 0;
+    }
+    p {
+      font-family: $font-main;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+      color: $color-white;
+      &.copyright {
+        font-size: 13px;
+        line-height: 150%;
+        text-transform: uppercase;
+      }
+      &.signature {
+        font-size: 15px;
+        line-height: 150%;
+        color: #FFDCDC;
+      }
+    }
+    .link {
+      font-family: $font-main;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+      letter-spacing: 0.02em;
+      text-decoration-line: underline;
+      color: $color-white;
+    }
+    .social-media {
+      display: flex;
+      align-items: center;
+      li {
+        a {
+          width: 38px;
+          height: 38px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: $color-white;
+          font-size: 18px;
+          color: $color-black;
+        }
+        &:first-child {
+          margin: 0 16px 0 0;
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint2($min:xl, $max:'') {}
+
+@include breakpoint2($min:lg, $max:xl) {}
+
+@include breakpoint2($min:md, $max:lg) {}
+
+@include breakpoint2($min:sm, $max:md) {}
+
+@include breakpoint2($min:xs, $max:sm) {}
+
+@include breakpoint2($min:'', $max:xs) {}
+
+// end footer

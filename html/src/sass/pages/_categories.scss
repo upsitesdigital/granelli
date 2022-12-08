@@ -1,0 +1,239 @@
+/*======================================
+  Categories
+======================================*/
+
+.categories {
+  overflow: hidden;
+  .container-custom {
+    max-width: 1308px;
+  }
+  .products-item {
+    border-radius: 10px;
+    padding: 0 0 9px 0;
+    .thumb {
+      height: 139px;
+    }
+    .cod {
+      font-size: 11px;
+    }
+    h3 {
+      font-size: 12px;
+      padding: 9px 22px;
+    }
+    .price {
+      font-size: 12px;
+      padding: 2px 0 11px 0;
+    }
+    .location {
+      font-size: 11px;
+    }
+  }
+  .grid {
+    @include columns( $quant: 310px calc(100% - 310px), $gutter: 0, $align: stretch, $template: '');
+    .sidebar {
+      background: #333333;
+      padding: 59px 0 0 0;
+      box-shadow: 0px 4px 60px rgba(0, 0, 0, 0.25);
+      position: relative;
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -50%;
+        width: 150%;
+        height: 100%;
+        background-color: #333333;
+      }
+      h3 {
+        font-family: $font-main;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 16px;
+        line-height: 130%;
+        text-transform: uppercase;
+        color: $color-white;
+        position: relative;
+        padding: 0 0 26px 21px;
+        .icon {
+          width: 10px;
+          height: 10px;
+          margin: 6px 0 0 -6px;
+          fill: transparent;
+          transform: rotate(90deg);
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
+      ul {
+        position: relative;
+        li {
+          padding: 12px 0;
+          a {
+            font-family: $font-main;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 130%;
+            color: $color-white;
+          }
+        }
+      }
+    }
+    .content {
+      .filter {
+        width: 100%;
+        height: 118px;
+        @include columns( $quant: 1fr 220px, $gutter: 0, $align: center, $template: '');
+        position: relative;
+        &:before {
+          content: '';
+          width: 1000%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          background-color: #282828;
+        }
+        .item {
+          position: relative;
+          &.box-search {
+            padding: 6px 0 0 86px;
+            position: relative;
+            .box-input {
+              position: relative;
+              display: inline-block;
+              .icon {
+                fill: transparent;
+                width: 24px;
+                height: 24px;
+                position: absolute;
+                top: 11px;
+                left: 11px;
+              }
+              input {
+                background: transparent;
+                border: 1px solid $color-white;
+                width: 365px;
+                height: 46px;
+                padding: 0 26px 0 47px;
+                font-family: 'Lexend';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 120%;
+                color: $color-white;
+                outline: none;
+                border-radius: 30px;
+                &::placeholder {
+                  color: $color-white;
+                  opacity: 1;
+                }
+              }
+            }
+            label {
+              padding-left: 4px;
+            }
+            .btn {
+              outline: none;
+              border: none;
+              height: 46px;
+              width: 162px;
+              margin: -4px 0 0 22px;
+              color: #333333;
+            }
+          }
+          &.box-order {
+            text-align: center;
+            padding: 10px 0 0 12px;
+            a {
+              font-family: $font-main;
+              font-style: normal;
+              font-weight: 800;
+              font-size: 14px;
+              line-height: 130%;
+              text-transform: uppercase;
+              color: $color-white;
+              span {
+                padding: 0 0 0 13px;
+              }
+              .icon {
+                width: 24px;
+                height: 24px;
+                fill: transparent;
+                margin: 0 0 -7px 10px;
+                stroke: $color-orange;
+                transform: rotate(-45deg);
+              }
+            }
+          }
+        }
+      }
+      .products-featured {
+        padding: 43px 35px 0 102px;
+        h2 {
+          font-size: 17px;
+          padding: 0 0 1px 0;
+        }
+        .slide-products {
+          .slick-slide {
+            padding: 20px 9px;
+          }
+          .slick-list {
+            margin: 0 -9px;
+          }
+          .slick-arrow {
+            position: absolute;
+            top: 50%;
+            width: 30px;
+            height: 30px;
+            border: none;
+            background: $color-white;
+            z-index: 10;
+            transform: translate(0px, -110%);
+            border-radius: 50%;
+            font-size: 21px;
+            color: #333333;
+            box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.4);
+            &.slick-prev {
+              left: -48px;
+            }
+            &.slick-next {
+              right: -48px;
+            }
+          }
+        }
+      }
+      .products-list {
+        padding: 33px 35px 160px 102px;
+        .title {
+          justify-content: center;
+          padding: 0 0 21px 0;
+          h2 {
+            font-family: $font-main;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 17px;
+            line-height: 140%;
+            color: $color-white;
+          }
+        }
+        .grid {
+          @include columns( $quant: 1fr 1fr 1fr 1fr, $gutter: 32px 18px, $align: start, $template: '');
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint2($min:xl, $max:'') {}
+
+@include breakpoint2($min:lg, $max:xl) {}
+
+@include breakpoint2($min:md, $max:lg) {}
+
+@include breakpoint2($min:sm, $max:md) {}
+
+@include breakpoint2($min:xs, $max:sm) {}
+
+@include breakpoint2($min:'', $max:xs) {}
