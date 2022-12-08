@@ -62,7 +62,7 @@
 }
 
 .products-featured {
-  padding: 0 0 59px 0;
+  padding: 0 0 42px 0;
   h2 {
     font-family: $font-main;
     font-style: normal;
@@ -78,7 +78,8 @@
       padding: 20px 14px;
     }
     .slick-list {
-      margin: 0 -14px;
+      margin: 0 -26px;
+      padding: 0px 12px 17px 12px;
     }
     .slick-arrow {
       position: absolute;
