@@ -17,13 +17,13 @@
   border-radius: 30px;
 }
 
-@include breakpoint2($min:xl, $max:'') {}
-
-@include breakpoint2($min:lg, $max:xl) {}
-
-@include breakpoint2($min:md, $max:lg) {}
-
-@include breakpoint2($min:sm, $max:md) {}
+@include breakpoint2($min:sm, $max:lg) {
+  .btn {
+    font-size: get-vw-lg(16px);
+    padding: get-vw-lg(11px) get-vw-lg(25px);
+    border-radius: get-vw-lg(30px);
+  }
+}
 
 @include breakpoint2($min:xs, $max:sm) {}
 

@@ -231,6 +231,7 @@
           height: 109px;
           display: inline-block;
           background: url(../img/btn-whatsapp.png) top left no-repeat;
+          background-size: contain;
         }
       }
       .box-form {
@@ -306,13 +307,172 @@
   }
 }
 
-@include breakpoint2($min:xl, $max:'') {}
-
-@include breakpoint2($min:lg, $max:xl) {}
-
-@include breakpoint2($min:md, $max:lg) {}
-
-@include breakpoint2($min:sm, $max:md) {}
+@include breakpoint2($min:sm, $max:lg) {
+  .post {
+    padding: 0 0 get-vw-lg(52px) 0;
+    .grid {
+      padding: 0 0 get-vw-lg(87px) 0;
+      @include columns( $quant: calc(50% - get-vw-lg(18px)) calc(50% - get-vw-lg(14px)), $gutter: get-vw-lg(32px), $align: start, $template: '');
+      .item {
+        h1 {
+          font-size: get-vw-lg(40px);
+          padding: get-vw-lg(54px) 0 get-vw-lg(44px) 0;
+        }
+        h2 {
+          font-size: get-vw-lg(16px);
+          padding: 0 0 get-vw-lg(8px) 0;
+        }
+        .galleries {
+          padding: 0 0 get-vw-lg(40px) 0;
+          .primary {
+            border-radius: get-vw-lg(8px);
+            margin: 0 0 get-vw-lg(34px) 0;
+          }
+          .slide {
+            .slick-slide {
+              padding: get-vw-lg(0px) get-vw-lg(8px);
+              border-radius: get-vw-lg(8px);
+            }
+            .slick-list {
+              margin: 0 get-vw-lg(-8px);
+            }
+            .slick-arrow {
+              width: get-vw-lg(30px);
+              height: get-vw-lg(30px);
+              font-size: get-vw-lg(21px);
+              box-shadow: 0 get-vw-lg(10px) get-vw-lg(10px) rgba(0, 0, 0, 0.4);
+              &.slick-prev {
+                left: get-vw-lg(-18px);
+              }
+              &.slick-next {
+                right: get-vw-lg(-18px);
+              }
+            }
+          }
+        }
+        .infos-price {
+          height: get-vw-lg(225px);
+          padding: get-vw-lg(4px) get-vw-lg(45px) get-vw-lg(18px) get-vw-lg(40px);
+          box-shadow: 0 get-vw-lg(10px) get-vw-lg(10px) rgba(0, 0, 0, 0.4);
+          border-radius: get-vw-lg(8px);
+          margin: 0 0 get-vw-lg(42px) 0;
+          .flex {
+            padding: get-vw-lg(30px) 0 get-vw-lg(22px) 0;
+            .item {
+              .label {
+                font-size: get-vw-lg(16px);
+                padding: 0 0 get-vw-lg(4px) 0;
+                &.small {
+                  font-size: get-vw-lg(12px);
+                  padding: 0 0 get-vw-lg(8px) 0;
+                }
+              }
+              .price {
+                font-size: get-vw-lg(24px);
+                text-shadow: 0 get-vw-lg(10px) get-vw-lg(10px) rgba(0, 0, 0, 0.4);
+              }
+              .cod {
+                font-size: get-vw-lg(20px);
+              }
+              .location {
+                font-size: get-vw-lg(14px);
+              }
+              .date {
+                font-size: get-vw-lg(14px);
+              }
+            }
+          }
+        }
+        .white {
+          li {
+            &:before {
+              padding-right: get-vw-lg(3px);
+            }
+            font-size: get-vw-lg(14px);
+          }
+        }
+        .box-descriptions {
+          padding: get-vw-lg(42px) get-vw-lg(28px) get-vw-lg(45px) get-vw-lg(43px);
+          margin: get-vw-lg(59px) 0 0 0;
+          box-shadow: 0 get-vw-lg(10px) get-vw-lg(10px) rgba(0, 0, 0, 0.4);
+          border-radius: get-vw-lg(8px);
+          .description {
+            padding: 0 0 get-vw-lg(20px) 0;
+            p {
+              font-size: get-vw-lg(14px);
+              padding: 0 0 get-vw-lg(22px) 0;
+            }
+            ul {
+              margin: get-vw-lg(-21px) 0 0 get-vw-lg(5px);
+              li {
+                &:before {
+                  padding-right: get-vw-lg(7px);
+                }
+                font-size: get-vw-lg(14px);
+              }
+            }
+          }
+          .condition {
+            padding: get-vw-lg(22px) 0 get-vw-lg(14px) 0;
+            ul {
+              padding: get-vw-lg(1px) 0 0 0;
+              li {
+                &:before {
+                  padding-right: get-vw-lg(3px);
+                }
+                font-size: get-vw-lg(14px);
+                padding: 0 0 get-vw-lg(6px) 0;
+              }
+            }
+          }
+          .ps {
+            font-size: get-vw-lg(12px);
+            padding: get-vw-lg(22px) 0 0 0;
+          }
+        }
+        .box-btn {
+          padding: get-vw-lg(31px) 0 get-vw-lg(28px) get-vw-lg(7px);
+          .btn-whatsapp {
+            width: get-vw-lg(301px);
+            height: get-vw-lg(109px);
+          }
+        }
+        .box-form {
+          box-shadow: 0 get-vw-lg(10px) get-vw-lg(10px) rgba(0, 0, 0, 0.4);
+          border-radius: get-vw-lg(8px);
+          padding: get-vw-lg(43px) get-vw-lg(41px) get-vw-lg(47px) get-vw-lg(41px);
+          h3 {
+            font-size: get-vw-lg(24px);
+            padding: 0 0 get-vw-lg(28px) 0;
+          }
+          label {
+            padding: 0 0 get-vw-lg(26px) 0;
+            span {
+              font-size: get-vw-lg(14px);
+            }
+            input {
+              font-size: get-vw-lg(14px);
+              padding: get-vw-lg(7px) 0 get-vw-lg(18px) 0;
+            }
+            textarea {
+              height: get-vw-lg(103px);
+              font-size: get-vw-lg(14px);
+              padding: get-vw-lg(7px) 0 get-vw-lg(18px) 0;
+            }
+          }
+          .box-robots {
+            padding: get-vw-lg(4px) 0 0 0;
+          }
+          .btn {
+            width: get-vw-lg(162px);
+            height: get-vw-lg(48px);
+            margin: get-vw-lg(38px) auto 0 auto;
+          }
+        }
+      }
+    }
+  }
+}
 
 @include breakpoint2($min:xs, $max:sm) {}
 

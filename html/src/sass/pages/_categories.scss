@@ -98,6 +98,7 @@
         .item {
           position: relative;
           &.box-search {
+            display: flex;
             padding: 6px 0 0 86px;
             position: relative;
             .box-input {
@@ -117,7 +118,7 @@
                 width: 365px;
                 height: 46px;
                 padding: 0 26px 0 47px;
-                font-family: 'Lexend';
+                font-family: $font-lexend;
                 font-style: normal;
                 font-weight: 400;
                 font-size: 16px;
@@ -139,7 +140,7 @@
               border: none;
               height: 46px;
               width: 162px;
-              margin: -4px 0 0 22px;
+              margin: 0 0 0 22px;
               color: #333333;
             }
           }
@@ -180,8 +181,7 @@
             padding: 20px 9px;
           }
           .slick-list {
-            margin: 0 -18px;
-            padding: 0px 9px 17px 9px;
+            margin: 0 -9px;
           }
           .slick-arrow {
             position: absolute;
@@ -227,13 +227,145 @@
   }
 }
 
-@include breakpoint2($min:xl, $max:'') {}
-
-@include breakpoint2($min:lg, $max:xl) {}
-
-@include breakpoint2($min:md, $max:lg) {}
-
-@include breakpoint2($min:sm, $max:md) {}
+@include breakpoint2($min:sm, $max:lg) {
+  .categories {
+    .container-custom {
+      max-width: get-vw-lg(1308px);
+    }
+    .products-item {
+      border-radius: get-vw-lg(10px);
+      padding: 0 0 get-vw-lg(9px) 0;
+      .thumb {
+        height: get-vw-lg(139px);
+      }
+      .cod {
+        font-size: get-vw-lg(11px);
+      }
+      h3 {
+        font-size: get-vw-lg(12px);
+        padding: get-vw-lg(9px) get-vw-lg(22px);
+      }
+      .price {
+        font-size: get-vw-lg(12px);
+        padding: get-vw-lg(2px) 0 get-vw-lg(11px) 0;
+      }
+      .location {
+        font-size: get-vw-lg(11px);
+      }
+    }
+    .grid {
+      @include columns( $quant: get-vw-lg(310px) calc(100% - 25.83333vw), $gutter: 0, $align: stretch, $template: '');
+      .sidebar {
+        padding: get-vw-lg(59px) 0 0 0;
+        box-shadow: 0 get-vw-lg(4px) get-vw-lg(60px) rgba(0, 0, 0, 0.25);
+        h3 {
+          font-size: get-vw-lg(16px);
+          padding: 0 0 get-vw-lg(26px) get-vw-lg(21px);
+          .icon {
+            width: get-vw-lg(10px);
+            height: get-vw-lg(10px);
+            margin: get-vw-lg(6px) 0 0 get-vw-lg(-6px);
+          }
+        }
+        ul {
+          li {
+            padding: get-vw-lg(12px) 0;
+            a {
+              font-size: get-vw-lg(14px);
+            }
+          }
+        }
+      }
+      .content {
+        .filter {
+          height: get-vw-lg(118px);
+          @include columns( $quant: 1fr get-vw-lg(220px), $gutter: 0, $align: center, $template: '');
+          .item {
+            &.box-search {
+              padding: get-vw-lg(6px) 0 0 get-vw-lg(86px);
+              .box-input {
+                .icon {
+                  width: get-vw-lg(24px);
+                  height: get-vw-lg(24px);
+                  top: get-vw-lg(11px);
+                  left: get-vw-lg(11px);
+                }
+                input {
+                  width: get-vw-lg(365px);
+                  height: get-vw-lg(46px);
+                  padding: 0 get-vw-lg(26px) 0 get-vw-lg(47px);
+                  font-size: get-vw-lg(16px);
+                  border-radius: get-vw-lg(30px);
+                }
+              }
+              label {
+                padding-left: get-vw-lg(4px);
+              }
+              .btn {
+                height: get-vw-lg(46px);
+                width: get-vw-lg(162px);
+                margin: 0 0 0 get-vw-lg(22px);
+              }
+            }
+            &.box-order {
+              padding: get-vw-lg(10px) 0 0 get-vw-lg(12px);
+              a {
+                font-size: get-vw-lg(14px);
+                span {
+                  padding: 0 0 0 get-vw-lg(13px);
+                }
+                .icon {
+                  width: get-vw-lg(24px);
+                  height: get-vw-lg(24px);
+                  margin: 0 0 get-vw-lg(-7px) get-vw-lg(10px);
+                }
+              }
+            }
+          }
+        }
+        .products-featured {
+          padding: get-vw-lg(43px) get-vw-lg(35px) 0 get-vw-lg(102px);
+          h2 {
+            font-size: get-vw-lg(17px);
+            padding: 0 0 get-vw-lg(1px) 0;
+          }
+          .slide-products {
+            .slick-slide {
+              padding: get-vw-lg(20px) get-vw-lg(9px);
+            }
+            .slick-list {
+              margin: 0 get-vw-lg(-9px);
+            }
+            .slick-arrow {
+              width: get-vw-lg(30px);
+              height: get-vw-lg(30px);
+              font-size: get-vw-lg(21px);
+              box-shadow: 0 get-vw-lg(10px) get-vw-lg(10px) rgba(0, 0, 0, 0.4);
+              &.slick-prev {
+                left: get-vw-lg(-48px);
+              }
+              &.slick-next {
+                right: get-vw-lg(-48px);
+              }
+            }
+          }
+        }
+        .products-list {
+          padding: get-vw-lg(33px) get-vw-lg(35px) get-vw-lg(160px) get-vw-lg(102px);
+          .title {
+            padding: 0 0 get-vw-lg(21px) 0;
+            h2 {
+              font-size: get-vw-lg(17px);
+            }
+          }
+          .grid {
+            @include columns( $quant: 1fr 1fr 1fr 1fr, $gutter: get-vw-lg(32px) get-vw-lg(18px), $align: start, $template: '');
+          }
+        }
+      }
+    }
+  }
+}
 
 @include breakpoint2($min:xs, $max:sm) {}
 
