@@ -474,6 +474,336 @@
   }
 }
 
-@include breakpoint2($min:xs, $max:sm) {}
+@include breakpoint2($min:xs, $max:sm) {
+  .post {
+    padding: 0 0 get-vw-sm(52px) 0;
+    .grid {
+      padding: 0 0 get-vw-sm(87px) 0;
+      @include columns( $quant: 100%, $gutter: get-vw-sm(32px), $align: start, $template: '');
+      .item {
+        h1 {
+          font-size: get-vw-sm(40px);
+          padding: get-vw-sm(54px) 0 get-vw-sm(44px) 0;
+        }
+        h2 {
+          font-size: get-vw-sm(16px);
+          padding: 0 0 get-vw-sm(8px) 0;
+        }
+        .galleries {
+          padding: 0 0 get-vw-sm(40px) 0;
+          .primary {
+            border-radius: get-vw-sm(8px);
+            margin: 0 0 get-vw-sm(34px) 0;
+          }
+          .slide {
+            .slick-slide {
+              padding: get-vw-sm(0px) get-vw-sm(8px);
+              border-radius: get-vw-sm(8px);
+            }
+            .slick-list {
+              margin: 0 get-vw-sm(-8px);
+            }
+            .slick-arrow {
+              width: get-vw-sm(30px);
+              height: get-vw-sm(30px);
+              font-size: get-vw-sm(21px);
+              box-shadow: 0 get-vw-sm(10px) get-vw-sm(10px) rgba(0, 0, 0, 0.4);
+              &.slick-prev {
+                left: get-vw-sm(-18px);
+              }
+              &.slick-next {
+                right: get-vw-sm(-18px);
+              }
+            }
+          }
+        }
+        .infos-price {
+          height: get-vw-sm(225px);
+          padding: get-vw-sm(4px) get-vw-sm(45px) get-vw-sm(18px) get-vw-sm(40px);
+          box-shadow: 0 get-vw-sm(10px) get-vw-sm(10px) rgba(0, 0, 0, 0.4);
+          border-radius: get-vw-sm(8px);
+          margin: 0 0 get-vw-sm(42px) 0;
+          .flex {
+            padding: get-vw-sm(30px) 0 get-vw-sm(22px) 0;
+            .item {
+              .label {
+                font-size: get-vw-sm(16px);
+                padding: 0 0 get-vw-sm(4px) 0;
+                &.small {
+                  font-size: get-vw-sm(12px);
+                  padding: 0 0 get-vw-sm(8px) 0;
+                }
+              }
+              .price {
+                font-size: get-vw-sm(24px);
+                text-shadow: 0 get-vw-sm(10px) get-vw-sm(10px) rgba(0, 0, 0, 0.4);
+              }
+              .cod {
+                font-size: get-vw-sm(20px);
+              }
+              .location {
+                font-size: get-vw-sm(14px);
+              }
+              .date {
+                font-size: get-vw-sm(14px);
+              }
+            }
+          }
+        }
+        .white {
+          li {
+            &:before {
+              padding-right: get-vw-sm(3px);
+            }
+            font-size: get-vw-sm(14px);
+          }
+        }
+        .box-descriptions {
+          padding: get-vw-sm(42px) get-vw-sm(28px) get-vw-sm(45px) get-vw-sm(43px);
+          margin: get-vw-sm(59px) 0 0 0;
+          box-shadow: 0 get-vw-sm(10px) get-vw-sm(10px) rgba(0, 0, 0, 0.4);
+          border-radius: get-vw-sm(8px);
+          .description {
+            padding: 0 0 get-vw-sm(20px) 0;
+            p {
+              font-size: get-vw-sm(14px);
+              padding: 0 0 get-vw-sm(22px) 0;
+            }
+            ul {
+              margin: get-vw-sm(-21px) 0 0 get-vw-sm(5px);
+              li {
+                &:before {
+                  padding-right: get-vw-sm(7px);
+                }
+                font-size: get-vw-sm(14px);
+              }
+            }
+          }
+          .condition {
+            padding: get-vw-sm(22px) 0 get-vw-sm(14px) 0;
+            ul {
+              padding: get-vw-sm(1px) 0 0 0;
+              li {
+                &:before {
+                  padding-right: get-vw-sm(3px);
+                }
+                font-size: get-vw-sm(14px);
+                padding: 0 0 get-vw-sm(6px) 0;
+              }
+            }
+          }
+          .ps {
+            font-size: get-vw-sm(12px);
+            padding: get-vw-sm(22px) 0 0 0;
+          }
+        }
+        .box-btn {
+          padding: get-vw-sm(31px) 0 get-vw-sm(28px) get-vw-sm(7px);
+          .btn-whatsapp {
+            width: get-vw-sm(301px);
+            height: get-vw-sm(109px);
+          }
+        }
+        .box-form {
+          box-shadow: 0 get-vw-sm(10px) get-vw-sm(10px) rgba(0, 0, 0, 0.4);
+          border-radius: get-vw-sm(8px);
+          padding: get-vw-sm(43px) get-vw-sm(41px) get-vw-sm(47px) get-vw-sm(41px);
+          h3 {
+            font-size: get-vw-sm(24px);
+            padding: 0 0 get-vw-sm(28px) 0;
+          }
+          label {
+            padding: 0 0 get-vw-sm(26px) 0;
+            span {
+              font-size: get-vw-sm(14px);
+            }
+            input {
+              font-size: get-vw-sm(14px);
+              padding: get-vw-sm(7px) 0 get-vw-sm(18px) 0;
+            }
+            textarea {
+              height: get-vw-sm(103px);
+              font-size: get-vw-sm(14px);
+              padding: get-vw-sm(7px) 0 get-vw-sm(18px) 0;
+            }
+          }
+          .box-robots {
+            padding: get-vw-sm(4px) 0 0 0;
+          }
+          .btn {
+            width: get-vw-sm(162px);
+            height: get-vw-sm(48px);
+            margin: get-vw-sm(38px) auto 0 auto;
+          }
+        }
+      }
+    }
+  }
+}
 
-@include breakpoint2($min:'', $max:xs) {}
+@include breakpoint2($min:'', $max:xs) {
+  .post {
+    padding: 0 0 get-vw-xs(52px) 0;
+    .grid {
+      padding: 0 0 get-vw-xs(87px) 0;
+      @include columns( $quant: 100%, $gutter: get-vw-xs(32px), $align: start, $template: '');
+      .item {
+        h1 {
+          font-size: get-vw-xs(40px);
+          padding: get-vw-xs(54px) 0 get-vw-xs(44px) 0;
+        }
+        h2 {
+          font-size: get-vw-xs(16px);
+          padding: 0 0 get-vw-xs(8px) 0;
+        }
+        .galleries {
+          padding: 0 0 get-vw-xs(40px) 0;
+          .primary {
+            border-radius: get-vw-xs(8px);
+            margin: 0 0 get-vw-xs(34px) 0;
+          }
+          .slide {
+            .slick-slide {
+              padding: get-vw-xs(0px) get-vw-xs(8px);
+              border-radius: get-vw-xs(8px);
+            }
+            .slick-list {
+              margin: 0 get-vw-xs(-8px);
+            }
+            .slick-arrow {
+              width: get-vw-xs(30px);
+              height: get-vw-xs(30px);
+              font-size: get-vw-xs(21px);
+              box-shadow: 0 get-vw-xs(10px) get-vw-xs(10px) rgba(0, 0, 0, 0.4);
+              &.slick-prev {
+                left: get-vw-xs(-18px);
+              }
+              &.slick-next {
+                right: get-vw-xs(-18px);
+              }
+            }
+          }
+        }
+        .infos-price {
+          height: get-vw-xs(225px);
+          padding: get-vw-xs(4px) get-vw-xs(45px) get-vw-xs(18px) get-vw-xs(40px);
+          box-shadow: 0 get-vw-xs(10px) get-vw-xs(10px) rgba(0, 0, 0, 0.4);
+          border-radius: get-vw-xs(8px);
+          margin: 0 0 get-vw-xs(42px) 0;
+          .flex {
+            padding: get-vw-xs(30px) 0 get-vw-xs(22px) 0;
+            .item {
+              .label {
+                font-size: get-vw-xs(16px);
+                padding: 0 0 get-vw-xs(4px) 0;
+                &.small {
+                  font-size: get-vw-xs(12px);
+                  padding: 0 0 get-vw-xs(8px) 0;
+                }
+              }
+              .price {
+                font-size: get-vw-xs(24px);
+                text-shadow: 0 get-vw-xs(10px) get-vw-xs(10px) rgba(0, 0, 0, 0.4);
+              }
+              .cod {
+                font-size: get-vw-xs(20px);
+              }
+              .location {
+                font-size: get-vw-xs(14px);
+              }
+              .date {
+                font-size: get-vw-xs(14px);
+              }
+            }
+          }
+        }
+        .white {
+          li {
+            &:before {
+              padding-right: get-vw-xs(3px);
+            }
+            font-size: get-vw-xs(14px);
+          }
+        }
+        .box-descriptions {
+          padding: get-vw-xs(42px) get-vw-xs(28px) get-vw-xs(45px) get-vw-xs(43px);
+          margin: get-vw-xs(59px) 0 0 0;
+          box-shadow: 0 get-vw-xs(10px) get-vw-xs(10px) rgba(0, 0, 0, 0.4);
+          border-radius: get-vw-xs(8px);
+          .description {
+            padding: 0 0 get-vw-xs(20px) 0;
+            p {
+              font-size: get-vw-xs(14px);
+              padding: 0 0 get-vw-xs(22px) 0;
+            }
+            ul {
+              margin: get-vw-xs(-21px) 0 0 get-vw-xs(5px);
+              li {
+                &:before {
+                  padding-right: get-vw-xs(7px);
+                }
+                font-size: get-vw-xs(14px);
+              }
+            }
+          }
+          .condition {
+            padding: get-vw-xs(22px) 0 get-vw-xs(14px) 0;
+            ul {
+              padding: get-vw-xs(1px) 0 0 0;
+              li {
+                &:before {
+                  padding-right: get-vw-xs(3px);
+                }
+                font-size: get-vw-xs(14px);
+                padding: 0 0 get-vw-xs(6px) 0;
+              }
+            }
+          }
+          .ps {
+            font-size: get-vw-xs(12px);
+            padding: get-vw-xs(22px) 0 0 0;
+          }
+        }
+        .box-btn {
+          padding: get-vw-xs(31px) 0 get-vw-xs(28px) get-vw-xs(7px);
+          .btn-whatsapp {
+            width: get-vw-xs(301px);
+            height: get-vw-xs(109px);
+          }
+        }
+        .box-form {
+          box-shadow: 0 get-vw-xs(10px) get-vw-xs(10px) rgba(0, 0, 0, 0.4);
+          border-radius: get-vw-xs(8px);
+          padding: get-vw-xs(43px) get-vw-xs(41px) get-vw-xs(47px) get-vw-xs(41px);
+          h3 {
+            font-size: get-vw-xs(24px);
+            padding: 0 0 get-vw-xs(28px) 0;
+          }
+          label {
+            padding: 0 0 get-vw-xs(26px) 0;
+            span {
+              font-size: get-vw-xs(14px);
+            }
+            input {
+              font-size: get-vw-xs(14px);
+              padding: get-vw-xs(7px) 0 get-vw-xs(18px) 0;
+            }
+            textarea {
+              height: get-vw-xs(103px);
+              font-size: get-vw-xs(14px);
+              padding: get-vw-xs(7px) 0 get-vw-xs(18px) 0;
+            }
+          }
+          .box-robots {
+            padding: get-vw-xs(4px) 0 0 0;
+          }
+          .btn {
+            width: get-vw-xs(162px);
+            height: get-vw-xs(48px);
+            margin: get-vw-xs(38px) auto 0 auto;
+          }
+        }
+      }
+    }
+  }
+}

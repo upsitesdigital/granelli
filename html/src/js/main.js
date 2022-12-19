@@ -1,24 +1,19 @@
 /*
-* Plugins
-*/
+ * Plugins
+ */
 import 'slick-carousel';
 // import 'selectric';
-import svg4everybody  from 'svg4everybody';
+import svg4everybody from 'svg4everybody';
 
 /**
  * Modules
  */
-import slider           from './modules/slider';
-
-/**
- * Vendors
- */
-import plugins           from './vendor/plugins';
+import slider from './modules/slider';
 
 /**
  * Pages
  */
-import home           from './pages/_home';
+import app from './pages/_app';
 
 
 (($) => {
@@ -27,7 +22,6 @@ import home           from './pages/_home';
   $(() => {
     svg4everybody();
     slider();
-    plugins();
-    home();
+    app();
   });
 })(jQuery);

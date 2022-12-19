@@ -13,7 +13,16 @@ export default function() {
     centerMode: false,
     focusOnSelect: true,
     adaptiveHeight: true,
-    centerPadding: 0
+    centerPadding: 0,
+    responsive: [{
+      breakpoint: 769,
+      settings: {
+        slidesToShow: 1,
+        dots: false,
+        arrows: true,
+        centerPadding: '20%',
+      }
+    }]
   });
 
   const $galleriesprimary = $('.galleries .primary');

@@ -25,6 +25,18 @@
   }
 }
 
-@include breakpoint2($min:xs, $max:sm) {}
+@include breakpoint2($min:xs, $max:sm) {
+  .btn {
+    font-size: get-vw-sm(16px);
+    padding: get-vw-sm(11px) get-vw-sm(25px);
+    border-radius: get-vw-sm(30px);
+  }
+}
 
-@include breakpoint2($min:'', $max:xs) {}
+@include breakpoint2($min:'', $max:xs) {
+  .btn {
+    font-size: get-vw-xs(16px);
+    padding: get-vw-xs(11px) get-vw-xs(25px);
+    border-radius: get-vw-xs(30px);
+  }
+}

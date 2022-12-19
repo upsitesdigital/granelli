@@ -44,6 +44,9 @@
         height: 100%;
         background-color: #333333;
       }
+      .menu-sidebar {
+        display: none;
+      }
       h3 {
         font-family: $font-main;
         font-style: normal;
@@ -367,6 +370,358 @@
   }
 }
 
-@include breakpoint2($min:xs, $max:sm) {}
+@include breakpoint2($min:xs, $max:sm) {
+  .categories {
+    .container-custom {
+      max-width: get-vw-sm(1308px);
+    }
+    .products-item {
+      border-radius: get-vw-sm(10px);
+      padding: 0 0 get-vw-sm(13px) 0;
+      .thumb {
+        height: get-vw-sm(210px);
+      }
+      .cod {
+        font-size: get-vw-sm(16px);
+      }
+      h3 {
+        font-size: get-vw-sm(18px);
+        padding: get-vw-sm(13px) get-vw-sm(33px);
+      }
+      .price {
+        font-size: get-vw-sm(18px);
+        padding: get-vw-sm(4px) 0 get-vw-sm(16px) 0;
+      }
+      .location {
+        font-size: get-vw-sm(16px);
+      }
+    }
+    .grid {
+      @include columns( $quant: 100%, $gutter: 0, $align: stretch, $template: '');
+      position: relative;
+      .sidebar {
+        width: 205px;
+        padding: get-vw-sm(59px) 0 0 0;
+        box-shadow: 0 get-vw-sm(4px) get-vw-sm(60px) rgba(0, 0, 0, 0.25);
+        position: absolute;
+        height: 100%;
+        top: 0;
+        left: -220px;
+        z-index: 20;
+        @include animate($time: 0.3s);
+        .menu-sidebar {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 30px;
+          height: 30px;
+          background-color: #333333;
+          position: absolute;
+          top: 60px;
+          right: -29px;
+          .icon {
+            stroke: $color-orange;
+            fill: transparent;
+            width: 15px;
+            height: 15px;
+            margin: 0;
+            transform: rotate(-90deg);
+            @include animate($time: 0.3s);
+          }
+        }
+        h3 {
+          font-size: get-vw-sm(16px);
+          padding: 0 0 get-vw-sm(26px) get-vw-sm(21px);
+          .icon {
+            width: get-vw-sm(10px);
+            height: get-vw-sm(10px);
+            margin: get-vw-sm(6px) 0 0 get-vw-sm(-6px);
+          }
+        }
+        ul {
+          li {
+            padding: get-vw-sm(12px) 0;
+            a {
+              font-size: get-vw-sm(14px);
+            }
+          }
+        }
+      }
+      .content {
+        .filter {
+          height: get-vw-sm(118px);
+          @include columns( $quant: 1fr get-vw-sm(300px), $gutter: 0, $align: center, $template: '');
+          &:before {
+            left: -20px;
+          }
+          .item {
+            &.box-search {
+              padding: get-vw-sm(6px) 0 0 0;
+              .box-input {
+                .icon {
+                  width: get-vw-sm(24px);
+                  height: get-vw-sm(24px);
+                  top: get-vw-sm(11px);
+                  left: get-vw-sm(11px);
+                }
+                input {
+                  width: get-vw-sm(365px);
+                  height: get-vw-sm(46px);
+                  padding: 0 get-vw-sm(26px) 0 get-vw-sm(47px);
+                  font-size: get-vw-sm(16px);
+                  border-radius: get-vw-sm(30px);
+                }
+              }
+              label {
+                padding-left: get-vw-sm(4px);
+              }
+              .btn {
+                height: get-vw-sm(46px);
+                width: get-vw-sm(162px);
+                margin: 0 0 0 get-vw-sm(22px);
+              }
+            }
+            &.box-order {
+              padding: get-vw-sm(10px) 0 0 get-vw-sm(20px);
+              text-align: left;
+              a {
+                font-size: get-vw-sm(14px);
+                span {
+                  padding: 0 0 0 get-vw-sm(13px);
+                }
+                .icon {
+                  width: get-vw-sm(24px);
+                  height: get-vw-sm(24px);
+                  margin: 0 0 get-vw-sm(-7px) get-vw-sm(10px);
+                }
+              }
+            }
+          }
+        }
+        .products-featured {
+          padding: get-vw-sm(43px) 0 0 0;
+          h2 {
+            font-size: get-vw-sm(17px);
+            padding: 0 0 get-vw-sm(1px) 0;
+          }
+          .slide-products {
+            .slick-slide {
+              padding: get-vw-sm(20px) get-vw-sm(9px);
+            }
+            .slick-list {
+              margin: 0 get-vw-sm(-9px);
+            }
+            .slick-arrow {
+              width: get-vw-sm(45px);
+              height: get-vw-sm(45px);
+              font-size: get-vw-sm(31px);
+              box-shadow: 0 get-vw-sm(15px) get-vw-sm(15px) rgba(0, 0, 0, 0.4);
+              &.slick-prev {
+                left: get-vw-sm(12px);
+              }
+              &.slick-next {
+                right: get-vw-sm(12px);
+              }
+            }
+          }
+        }
+        .products-list {
+          padding: get-vw-sm(33px) 0 get-vw-sm(160px) 0;
+          .title {
+            padding: 0 0 get-vw-sm(21px) 0;
+            h2 {
+              font-size: get-vw-sm(17px);
+            }
+          }
+          .grid {
+            @include columns( $quant: 1fr 1fr, $gutter: get-vw-sm(32px) get-vw-sm(18px), $align: start, $template: '');
+          }
+        }
+      }
+    }
+  }
+  .menu-sidebar-open .categories .grid .sidebar .menu-sidebar .icon {
+    transform: rotate(90deg);
+  }
+  .menu-sidebar-open .categories .grid .sidebar {
+    left: 0px;
+  }
+}
 
-@include breakpoint2($min:'', $max:xs) {}
+@include breakpoint2($min:'', $max:xs) {
+  .categories {
+    .container-custom {
+      max-width: get-vw-xs(1308px);
+    }
+    .products-item {
+      border-radius: get-vw-xs(10px);
+      padding: 0 0 get-vw-xs(13px) 0;
+      .thumb {
+        height: get-vw-xs(210px);
+      }
+      .cod {
+        font-size: get-vw-xs(16px);
+      }
+      h3 {
+        font-size: get-vw-xs(18px);
+        padding: get-vw-xs(13px) get-vw-xs(33px);
+      }
+      .price {
+        font-size: get-vw-xs(18px);
+        padding: get-vw-xs(4px) 0 get-vw-xs(16px) 0;
+      }
+      .location {
+        font-size: get-vw-xs(16px);
+      }
+    }
+    .grid {
+      @include columns( $quant: 100%, $gutter: 0, $align: stretch, $template: '');
+      position: relative;
+      .sidebar {
+        width: 205px;
+        padding: get-vw-xs(59px) 0 0 0;
+        box-shadow: 0 get-vw-xs(4px) get-vw-xs(60px) rgba(0, 0, 0, 0.25);
+        position: absolute;
+        height: 100%;
+        top: 0;
+        left: -220px;
+        z-index: 20;
+        @include animate($time: 0.3s);
+        .menu-sidebar {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 30px;
+          height: 30px;
+          background-color: #333333;
+          position: absolute;
+          top: 60px;
+          right: -29px;
+          .icon {
+            stroke: $color-orange;
+            fill: transparent;
+            width: 15px;
+            height: 15px;
+            margin: 0;
+            transform: rotate(-90deg);
+            @include animate($time: 0.3s);
+          }
+        }
+        h3 {
+          font-size: get-vw-xs(16px);
+          padding: 0 0 get-vw-xs(26px) get-vw-xs(21px);
+          .icon {
+            width: get-vw-xs(10px);
+            height: get-vw-xs(10px);
+            margin: get-vw-xs(6px) 0 0 get-vw-xs(-6px);
+          }
+        }
+        ul {
+          li {
+            padding: get-vw-xs(12px) 0;
+            a {
+              font-size: get-vw-xs(14px);
+            }
+          }
+        }
+      }
+      .content {
+        .filter {
+          height: get-vw-xs(118px);
+          @include columns( $quant: 1fr get-vw-xs(300px), $gutter: 0, $align: center, $template: '');
+          &:before {
+            left: -20px;
+          }
+          .item {
+            &.box-search {
+              padding: get-vw-xs(6px) 0 0 0;
+              .box-input {
+                .icon {
+                  width: get-vw-xs(24px);
+                  height: get-vw-xs(24px);
+                  top: get-vw-xs(11px);
+                  left: get-vw-xs(11px);
+                }
+                input {
+                  width: get-vw-xs(365px);
+                  height: get-vw-xs(46px);
+                  padding: 0 get-vw-xs(26px) 0 get-vw-xs(47px);
+                  font-size: get-vw-xs(16px);
+                  border-radius: get-vw-xs(30px);
+                }
+              }
+              label {
+                padding-left: get-vw-xs(4px);
+              }
+              .btn {
+                height: get-vw-xs(46px);
+                width: get-vw-xs(162px);
+                margin: 0 0 0 get-vw-xs(22px);
+              }
+            }
+            &.box-order {
+              padding: get-vw-xs(10px) 0 0 get-vw-xs(20px);
+              text-align: left;
+              a {
+                font-size: get-vw-xs(14px);
+                span {
+                  padding: 0 0 0 get-vw-xs(13px);
+                }
+                .icon {
+                  width: get-vw-xs(24px);
+                  height: get-vw-xs(24px);
+                  margin: 0 0 get-vw-xs(-7px) get-vw-xs(10px);
+                }
+              }
+            }
+          }
+        }
+        .products-featured {
+          padding: get-vw-xs(43px) 0 0 0;
+          h2 {
+            font-size: get-vw-xs(17px);
+            padding: 0 0 get-vw-xs(1px) 0;
+          }
+          .slide-products {
+            .slick-slide {
+              padding: get-vw-xs(20px) get-vw-xs(9px);
+            }
+            .slick-list {
+              margin: 0 get-vw-xs(-9px);
+            }
+            .slick-arrow {
+              width: get-vw-xs(45px);
+              height: get-vw-xs(45px);
+              font-size: get-vw-xs(31px);
+              box-shadow: 0 get-vw-xs(15px) get-vw-xs(15px) rgba(0, 0, 0, 0.4);
+              &.slick-prev {
+                left: get-vw-xs(12px);
+              }
+              &.slick-next {
+                right: get-vw-xs(12px);
+              }
+            }
+          }
+        }
+        .products-list {
+          padding: get-vw-xs(33px) 0 get-vw-xs(160px) 0;
+          .title {
+            padding: 0 0 get-vw-xs(21px) 0;
+            h2 {
+              font-size: get-vw-xs(17px);
+            }
+          }
+          .grid {
+            @include columns( $quant: 1fr 1fr, $gutter: get-vw-xs(32px) get-vw-xs(18px), $align: start, $template: '');
+          }
+        }
+      }
+    }
+  }
+  .menu-sidebar-open .categories .grid .sidebar .menu-sidebar .icon {
+    transform: rotate(90deg);
+  }
+  .menu-sidebar-open .categories .grid .sidebar {
+    left: 0px;
+  }
+}

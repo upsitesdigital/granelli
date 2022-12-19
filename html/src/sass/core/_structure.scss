@@ -52,16 +52,91 @@ body {
   }
 }
 
-@include breakpoint2($min:xs, $max:sm) {}
+@include breakpoint2($min:xs, $max:sm) {
+  .bar-top {
+    padding: get-vw-sm(9px) 0 get-vw-sm(7px) 0;
+    a {
+      font-size: get-vw-sm(14px);
+      .icon {
+        width: get-vw-sm(22px);
+        height: get-vw-sm(22px);
+        margin: 0 get-vw-sm(4px) 0 0;
+      }
+      &.mail {
+        margin-right: get-vw-sm(32px);
+        margin-left: get-vw-sm(-21px);
+      }
+    }
+  }
+}
 
 @include breakpoint2($min:'', $max:xs) {}
 
 // header
+#open-menu {
+  margin-top: -0;
+  display: none;
+  .ani {
+    cursor: pointer;
+    display: flex;
+    padding: 0;
+    svg {}
+    .close,
+    #close {
+      margin: 0 auto;
+      .line {
+        fill: none;
+        stroke: black;
+        stroke-width: 6;
+        transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .line1 {
+        stroke-dasharray: 60 207;
+        stroke-width: 6;
+      }
+      .line2 {
+        stroke-dasharray: 60 60;
+        stroke-width: 6;
+      }
+      .line3 {
+        stroke-dasharray: 60 207;
+        stroke-width: 6;
+      }
+    }
+  }
+  &.opened {
+    .close,
+    #close {
+      .line1 {
+        stroke-dasharray: 90 207;
+        stroke-dashoffset: -134;
+        stroke-width: 6;
+      }
+      .line2 {
+        stroke-dasharray: 1 60;
+        stroke-dashoffset: -30;
+        stroke-width: 6;
+      }
+      .line3 {
+        stroke-dasharray: 90 207;
+        stroke-dashoffset: -134;
+        stroke-width: 6;
+      }
+    }
+  }
+}
+
 header {
   padding: 10px 0 13px 0;
   background-color: $color-white;
+  position: sticky;
+  z-index: 100;
+  top: 0;
   .grid {
-    @include columns( $quant: 160px 1fr 261px, $gutter: 0, $align: center, $template: '');
+    @include columns( $quant: 160px 1fr, $gutter: 0, $align: center, $template: '');
+    .subgrid {
+      @include columns( $quant: 1fr 261px, $gutter: 0, $align: center, $template: '');
+    }
     ul {
       display: flex;
       justify-content: flex-end;
@@ -143,7 +218,10 @@ header {
   header {
     padding: get-vw-lg(10px) 0 get-vw-lg(13px) 0;
     .grid {
-      @include columns( $quant: get-vw-lg(160px) 1fr get-vw-lg(261px), $gutter: 0, $align: center, $template: '');
+      @include columns( $quant: get-vw-lg(160px) 1fr, $gutter: 0, $align: center, $template: '');
+      .subgrid {
+        @include columns( $quant: 1fr get-vw-lg(261px), $gutter: 0, $align: center, $template: '');
+      }
       ul {
         padding: get-vw-lg(6px) get-vw-lg(25px) 0 0;
         li {
@@ -180,9 +258,177 @@ header {
   }
 }
 
-@include breakpoint2($min:xs, $max:sm) {}
+@include breakpoint2($min:xs, $max:sm) {
+  #open-menu {
+    display: inline-block;
+    position: relative;
+    z-index: 101;
+  }
+  header {
+    padding: get-vw-sm(10px) 0 get-vw-sm(13px) 0;
+    .grid {
+      @include columns( $quant: get-vw-sm(160px) 1fr, $gutter: 0, $align: center, $template: '');
+      .item:last-child {
+        text-align: right;
+        position: relative;
+      }
+      .item:last-child.cols-03 {
+        display: block;
+        padding: get-vw-sm(6px) get-vw-sm(25px);
+        text-align: center;
+        min-width: 190px;
+      }
+      .subgrid {
+        @include animate($time: 0.3s);
+        @include columns( $quant: 1fr, $gutter: 0, $align: center, $template: '');
+        grid-auto-rows: max-content;
+        position: absolute;
+        top: 100%;
+        right: -15px;
+        width: 20%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: #FFFFFF;
+        z-index: 100;
+        visibility: hidden;
+        overflow: hidden;
+        opacity: 0;
+      }
+      ul {
+        padding: get-vw-sm(6px) get-vw-sm(25px);
+        display: block;
+        li {
+          padding: get-vw-sm(25px) 0 get-vw-sm(26px) 0;
+          border-top: 1px solid $color-orange;
+          &::before {
+            height: get-vw-sm(12px);
+            top: get-vw-sm(3px);
+            display: none;
+          }
+          &:first-child {
+            border: none;
+          }
+          a {
+            font-size: get-vw-sm(24px);
+            .icon {
+              width: get-vw-sm(15px);
+              height: get-vw-sm(15px);
+              margin: 0 get-vw-sm(10px) 0 get-vw-sm(21px);
+            }
+          }
+        }
+      }
+      .btn {
+        font-size: get-vw-sm(24px);
+        margin: get-vw-sm(4px) 0 0 0;
+        width: 100%;
+        height: auto;
+        padding: get-vw-sm(22px) get-vw-sm(25px);
+        border-radius: get-vw-sm(60px);
+      }
+      .login {
+        font-size: get-vw-sm(22px);
+        margin: get-vw-sm(20px) 0 0 0;
+        &:before {
+          width: get-vw-sm(49px);
+          height: get-vw-sm(54px);
+          margin: get-vw-sm(-2px) get-vw-sm(6px) 0 0;
+        }
+      }
+    }
+  }
+  .menu-open header .grid .subgrid {
+    visibility: visible;
+    width: 80%;
+    opacity: 1;
+  }
+}
 
-@include breakpoint2($min:'', $max:xs) {}
+@include breakpoint2($min:'', $max:xs) {
+  #open-menu {
+    display: inline-block;
+    position: relative;
+    z-index: 101;
+  }
+  header {
+    padding: get-vw-xs(10px) 0 get-vw-xs(13px) 0;
+    .grid {
+      @include columns( $quant: get-vw-xs(160px) 1fr, $gutter: 0, $align: center, $template: '');
+      .item:last-child {
+        text-align: right;
+        position: relative;
+      }
+      .item:last-child.cols-03 {
+        display: block;
+        padding: get-vw-xs(6px) get-vw-xs(25px);
+        text-align: center;
+        min-width: 190px;
+      }
+      .subgrid {
+        @include animate($time: 0.3s);
+        @include columns( $quant: 1fr, $gutter: 0, $align: center, $template: '');
+        grid-auto-rows: max-content;
+        position: absolute;
+        top: 100%;
+        right: -15px;
+        width: 20%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: #FFFFFF;
+        z-index: 100;
+        visibility: hidden;
+        overflow: auto;
+        opacity: 0;
+      }
+      ul {
+        padding: get-vw-xs(6px) get-vw-xs(25px);
+        display: block;
+        li {
+          padding: get-vw-xs(25px) 0 get-vw-xs(26px) 0;
+          border-top: 1px solid $color-orange;
+          &::before {
+            height: get-vw-xs(12px);
+            top: get-vw-xs(3px);
+            display: none;
+          }
+          &:first-child {
+            border: none;
+          }
+          a {
+            font-size: get-vw-xs(24px);
+            .icon {
+              width: get-vw-xs(15px);
+              height: get-vw-xs(15px);
+              margin: 0 get-vw-xs(10px) 0 get-vw-xs(21px);
+            }
+          }
+        }
+      }
+      .btn {
+        font-size: get-vw-xs(24px);
+        margin: get-vw-xs(4px) 0 0 0;
+        width: 100%;
+        height: auto;
+        padding: get-vw-xs(22px) get-vw-xs(25px);
+        border-radius: get-vw-xs(60px);
+      }
+      .login {
+        font-size: get-vw-xs(22px);
+        margin: get-vw-xs(20px) 0 0 0;
+        &:before {
+          width: get-vw-xs(49px);
+          height: get-vw-xs(54px);
+          margin: get-vw-xs(-2px) get-vw-xs(6px) 0 0;
+        }
+      }
+    }
+  }
+  .menu-open header .grid .subgrid {
+    visibility: visible;
+    width: 100%;
+    opacity: 1;
+  }
+}
 
 // end header
 // main
@@ -371,8 +617,132 @@ footer {
   }
 }
 
-@include breakpoint2($min:xs, $max:sm) {}
+@include breakpoint2($min:xs, $max:sm) {
+  footer {
+    padding: get-vw-sm(52px) 0 0 0;
+    .grid {
+      padding: 0 0 get-vw-sm(36px) 0;
+      @include columns( $quant: 1fr, $gutter: get-vw-sm(10px), $align: start, $template: '');
+      .item {
+        .logo {
+          width: get-vw-sm(202px);
+          height: get-vw-sm(95px);
+          margin: 0 0 0 get-vw-sm(8px);
+          border-radius: get-vw-sm(16px);
+          img {
+            width: get-vw-sm(186px);
+            height: get-vw-sm(79px);
+          }
+        }
+        h5 {
+          font-size: get-vw-sm(14px);
+          padding: get-vw-sm(13px) 0 get-vw-sm(8px) 0;
+          &:before {
+            display: none;
+            width: get-vw-sm(16px);
+            top: get-vw-sm(-8px);
+          }
+        }
+        p {
+          font-size: get-vw-sm(14px);
+        }
+      }
+    }
+    .flex {
+      padding: get-vw-sm(30px) 0;
+      &.pcustom {
+        padding: get-vw-sm(44px) 0 get-vw-sm(25px) 0;
+      }
+      p {
+        font-size: get-vw-sm(14px);
+        &.copyright {
+          font-size: get-vw-sm(13px);
+        }
+        &.signature {
+          font-size: get-vw-sm(15px);
+        }
+      }
+      .link {
+        font-size: get-vw-sm(14px);
+      }
+      .social-media {
+        li {
+          a {
+            width: get-vw-sm(38px);
+            height: get-vw-sm(38px);
+            font-size: get-vw-sm(18px);
+          }
+          &:first-child {
+            margin: 0 get-vw-sm(16px) 0 0;
+          }
+        }
+      }
+    }
+  }
+}
 
-@include breakpoint2($min:'', $max:xs) {}
+@include breakpoint2($min:'', $max:xs) {
+  footer {
+    padding: get-vw-xs(52px) 0 0 0;
+    .grid {
+      padding: 0 0 get-vw-xs(36px) 0;
+      @include columns( $quant: 1fr, $gutter: get-vw-xs(10px), $align: start, $template: '');
+      .item {
+        .logo {
+          width: get-vw-xs(202px);
+          height: get-vw-xs(95px);
+          margin: 0 0 0 get-vw-xs(8px);
+          border-radius: get-vw-xs(16px);
+          img {
+            width: get-vw-xs(186px);
+            height: get-vw-xs(79px);
+          }
+        }
+        h5 {
+          font-size: get-vw-xs(14px);
+          padding: get-vw-xs(13px) 0 get-vw-xs(8px) 0;
+          &:before {
+            display: none;
+            width: get-vw-xs(16px);
+            top: get-vw-xs(-8px);
+          }
+        }
+        p {
+          font-size: get-vw-xs(14px);
+        }
+      }
+    }
+    .flex {
+      padding: get-vw-xs(30px) 0;
+      &.pcustom {
+        padding: get-vw-xs(44px) 0 get-vw-xs(25px) 0;
+      }
+      p {
+        font-size: get-vw-xs(14px);
+        &.copyright {
+          font-size: get-vw-xs(13px);
+        }
+        &.signature {
+          font-size: get-vw-xs(15px);
+        }
+      }
+      .link {
+        font-size: get-vw-xs(14px);
+      }
+      .social-media {
+        li {
+          a {
+            width: get-vw-xs(38px);
+            height: get-vw-xs(38px);
+            font-size: get-vw-xs(18px);
+          }
+          &:first-child {
+            margin: 0 get-vw-xs(16px) 0 0;
+          }
+        }
+      }
+    }
+  }
+}
 
 // end footer
