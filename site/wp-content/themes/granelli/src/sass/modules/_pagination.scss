@@ -1,0 +1,75 @@
+/*======================================
+  Paginations
+======================================*/
+
+.paginations {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 46px 0 0 0;
+  a {
+    font-family: $font-alt;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 160%;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: $color-white;
+    margin: 0 12px;
+    border-bottom: 1px solid transparent;
+    &.prev,
+    &.next {
+      margin: 0 45px;
+      color: $color-orange;
+    }
+    &.current {
+      color: $color-orange;
+    }
+    &:hover {
+      border-bottom: 1px solid $color-orange;
+    }
+  }
+}
+
+@include breakpoint2($min:sm, $max:lg) {
+  .paginations {
+    padding: get-vw-lg(46px) 0 0 0;
+    a {
+      font-size: get-vw-lg(14px);
+      margin: 0 get-vw-lg(12px);
+      &.prev,
+      &.next {
+        margin: 0 get-vw-lg(45px);
+      }
+    }
+  }
+}
+
+@include breakpoint2($min:xs, $max:sm) {
+  .paginations {
+    padding: get-vw-sm(46px) 0 0 0;
+    a {
+      font-size: get-vw-sm(14px);
+      margin: 0 get-vw-sm(12px);
+      &.prev,
+      &.next {
+        margin: 0 get-vw-sm(45px);
+      }
+    }
+  }
+}
+
+@include breakpoint2($min:'', $max:xs) {
+  .paginations {
+    padding: get-vw-xs(46px) 0 0 0;
+    a {
+      font-size: get-vw-xs(14px);
+      margin: 0 get-vw-xs(12px);
+      &.prev,
+      &.next {
+        margin: 0 get-vw-xs(45px);
+      }
+    }
+  }
+}

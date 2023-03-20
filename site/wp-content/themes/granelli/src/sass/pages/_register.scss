@@ -1,0 +1,153 @@
+/*======================================
+  Register
+======================================*/
+
+.section-register {
+  padding: 200px 0;
+  .box-form {
+    padding: 47px 55px 57px 57px;
+    background: #272727;
+    box-shadow: 0px 10px 10px rgba($color-black, 0.4);
+    border-radius: 8px;
+    max-width: 548px;
+    margin: 0 auto;
+    h2 {
+      font-family: $font-alt;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 32px;
+      line-height: 110%;
+      color: $color-white;
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      padding: 0 0 28px 9px;
+    }
+    .box-error {
+      padding: 0 0 20px 0;
+      p {
+        font-family: $font-main;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 120%;
+        color: $color-red;
+        display: block;
+        padding: 0 0 4px 9px;
+      }
+    }
+    label {
+      display: block;
+      padding: 0 0 25px 0;
+      .label {
+        font-family: $font-main;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 120%;
+        color: $color-orange;
+        display: block;
+        padding: 0 0 4px 37px;
+        input {
+          width: 15px;
+          height: 15px;
+          margin-right: 10px;
+          accent-color: $color-orange;
+        }
+      }
+      input {
+        width: 100%;
+        height: 46px;
+        border: 1px solid #C4C4C4;
+        border-radius: 25px;
+        background: transparent;
+        font-family: $font-lexend;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 120%;
+        color: $color-white;
+        padding: 0 35px;
+        outline: none;
+        &::placeholder {
+          color: $color-white;
+          opacity: 1;
+        }
+      }
+      textarea {
+        width: 100%;
+        height: 147px;
+        border: 1px solid #C4C4C4;
+        border-radius: 25px;
+        background: transparent;
+        font-family: $font-lexend;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 120%;
+        color: $color-white;
+        padding: 20px 35px;
+        resize: none;
+        outline: none;
+        &::placeholder {
+          color: $color-white;
+          opacity: 1;
+        }
+      }
+      &.term {
+        display: flex;
+        align-items: center;
+        input {
+          width: 15px;
+          height: 15px;
+          margin-right: 10px;
+          accent-color: #F6821F;
+        }
+        span {
+          font-family: $font-main;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 13px;
+          line-height: 120%;
+          color: $color-orange;
+          display: block;
+        }
+      }
+      &.login-submit {
+        text-align: center;
+      }
+    }
+    .center {
+      text-align: center;
+    }
+    .btn {
+      @include animate($time: 0.3s);
+      border: none;
+      outline: none;
+      margin: 4px auto 0 auto;
+      padding: 15px 57px;
+      display: inline-block;
+      font-family: $font-main;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 16px;
+      line-height: 120%;
+      text-align: center;
+      color: #FFFFFF;
+      background-color: $color-orange;
+      border-radius: 30px;
+      width: auto;
+      height: auto;
+    }
+  }
+}
+
+@include breakpoint2($min:xl, $max:'') {}
+
+@include breakpoint2($min:lg, $max:xl) {}
+
+@include breakpoint2($min:md, $max:lg) {}
+
+@include breakpoint2($min:sm, $max:md) {}
+
+@include breakpoint2($min:xs, $max:sm) {}
+
+@include breakpoint2($min:'', $max:xs) {}

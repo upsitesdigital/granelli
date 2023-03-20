@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+/*======================================
+  Settings admin
+======================================*/
+
+th#US_column_btn_publish,
+th#US_column_btn_edit,
+th#US_post_views_count {
+  width: 100px;
+}
+
+td.US_column_btn_edit.column-US_column_btn_edit a,
+td.US_column_btn_publish.column-US_column_btn_publish a {
+  width: 100%;
+  text-align: center;
+}

@@ -1,0 +1,367 @@
+/*======================================
+  About
+======================================*/
+
+.simple-page {
+  padding: 100px 0 50px 0;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: $font-alt;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    color: $color-white;
+    padding: 0 0 28px 0;
+  }
+  h1 {
+    font-size: 29px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  h3 {
+    font-size: 23px;
+  }
+  h4 {
+    font-size: 22px;
+  }
+  h5 {
+    font-size: 21px;
+  }
+  h6 {
+    font-size: 20px;
+  }
+  p,
+  pre {
+    font-family: $font-main;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 178%;
+    color: $color-white;
+    opacity: 0.8;
+    margin: 0 40px 40px 0;
+    img {
+      margin: 23px 0 0 0;
+      max-width: 100%;
+      height: auto;
+    }
+    strong {
+      font-weight: 900;
+    }
+    em {
+      font-style: italic;
+    }
+    a {
+      @include animate($time: 0.3s);
+      &:hover {
+        color: $color-orange;
+      }
+    }
+  }
+  ul {
+    margin: 0 40px 40px 0;
+    li {
+      font-family: $font-main;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 178%;
+      color: $color-white;
+      opacity: 0.8;
+      list-style: disc inside;
+      strong {
+        font-weight: 900;
+      }
+      em {
+        font-style: italic;
+      }
+      a {
+        font-weight: 900;
+        color: $color-white;
+      }
+      &::marker {
+        color: $color-white;
+      }
+    }
+  }
+  ol {
+    margin: 0 40px 40px 0;
+    li {
+      font-family: $font-main;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 178%;
+      color: $color-white;
+      opacity: 0.8;
+      list-style: decimal inside;
+      strong {
+        font-weight: 900;
+      }
+      em {
+        font-style: italic;
+      }
+      a {
+        font-weight: 900;
+        color: $color-white;
+      }
+      &::marker {
+        color: $color-white;
+      }
+    }
+  }
+  .twitter-tweet {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  blockquote {
+    border-top: 1px solid $color-black;
+    border-bottom: 1px solid $color-black;
+    margin: 64px 0 24px 0;
+    padding: 31px 0 32px 0;
+    @include columns( $quant: 17% 83%, $gutter: 0, $align: stretch, $template: '');
+    &::before {
+      content: ',,';
+      width: 44px;
+      height: 34px;
+      margin: 16px 0 0 52px;
+      font-family: $font-alt;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 100px;
+      line-height: 0%;
+      color: $color-white;
+      transform: rotate(180deg);
+    }
+    .icon {
+      fill: $color-white;
+      width: 44px;
+      height: 34px;
+      margin: 0 0 0 52px;
+    }
+    p {
+      font-family: $font-alt;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 140%;
+      color: $color-white;
+      margin: 0;
+    }
+  }
+}
+
+@include breakpoint2($min:sm, $max:lg) {
+  .simple-page {
+    padding: get-vw-lg(100px) 0 get-vw-lg(50px) 0;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      padding: 0 0 get-vw-lg(28px) 0;
+    }
+    h1 {
+      font-size: get-vw-lg(29px);
+    }
+    h2 {
+      font-size: get-vw-lg(24px);
+    }
+    h3 {
+      font-size: get-vw-lg(23px);
+    }
+    h4 {
+      font-size: get-vw-lg(22px);
+    }
+    h5 {
+      font-size: get-vw-lg(21px);
+    }
+    h6 {
+      font-size: get-vw-lg(20px);
+    }
+    p,
+    pre {
+      font-size: get-vw-lg(18px);
+      margin: 0 get-vw-lg(40px) get-vw-lg(40px) 0;
+      img {
+        margin: get-vw-lg(23px) 0 0 0;
+      }
+    }
+    ul {
+      margin: 0 get-vw-lg(40px) get-vw-lg(40px) 0;
+      li {
+        font-size: get-vw-lg(18px);
+      }
+    }
+    ol {
+      margin: 0 get-vw-lg(40px) get-vw-lg(40px) 0;
+      li {
+        font-size: get-vw-lg(18px);
+      }
+    }
+    blockquote {
+      margin: get-vw-lg(64px) 0 get-vw-lg(24px) 0;
+      padding: get-vw-lg(31px) 0 get-vw-lg(32px) 0;
+      &::before {
+        width: get-vw-lg(44px);
+        height: get-vw-lg(34px);
+        margin: get-vw-lg(16px) 0 0 get-vw-lg(52px);
+        font-size: get-vw-lg(100px);
+      }
+      .icon {
+        width: get-vw-lg(44px);
+        height: get-vw-lg(34px);
+        margin: 0 0 0 get-vw-lg(52px);
+      }
+      p {
+        font-size: get-vw-lg(22px);
+      }
+    }
+  }
+}
+
+@include breakpoint2($min:xs, $max:sm) {
+  .simple-page {
+    padding: get-vw-sm(100px) 0 get-vw-sm(50px) 0;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      padding: 0 0 get-vw-sm(28px) 0;
+    }
+    h1 {
+      font-size: get-vw-sm(29px);
+    }
+    h2 {
+      font-size: get-vw-sm(24px);
+    }
+    h3 {
+      font-size: get-vw-sm(23px);
+    }
+    h4 {
+      font-size: get-vw-sm(22px);
+    }
+    h5 {
+      font-size: get-vw-sm(21px);
+    }
+    h6 {
+      font-size: get-vw-sm(20px);
+    }
+    p,
+    pre {
+      font-size: get-vw-sm(18px);
+      margin: 0 get-vw-sm(40px) get-vw-sm(40px) 0;
+      img {
+        margin: get-vw-sm(23px) 0 0 0;
+      }
+    }
+    ul {
+      margin: 0 get-vw-sm(40px) get-vw-sm(40px) 0;
+      li {
+        font-size: get-vw-sm(18px);
+      }
+    }
+    ol {
+      margin: 0 get-vw-sm(40px) get-vw-sm(40px) 0;
+      li {
+        font-size: get-vw-sm(18px);
+      }
+    }
+    blockquote {
+      margin: get-vw-sm(64px) 0 get-vw-sm(24px) 0;
+      padding: get-vw-sm(31px) 0 get-vw-sm(32px) 0;
+      &::before {
+        width: get-vw-sm(44px);
+        height: get-vw-sm(34px);
+        margin: get-vw-sm(16px) 0 0 get-vw-sm(52px);
+        font-size: get-vw-sm(100px);
+      }
+      .icon {
+        width: get-vw-sm(44px);
+        height: get-vw-sm(34px);
+        margin: 0 0 0 get-vw-sm(52px);
+      }
+      p {
+        font-size: get-vw-sm(22px);
+      }
+    }
+  }
+}
+
+@include breakpoint2($min:'', $max:xs) {
+  .simple-page {
+    padding: get-vw-xs(100px) 0 get-vw-xs(50px) 0;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      padding: 0 0 get-vw-xs(28px) 0;
+    }
+    h1 {
+      font-size: get-vw-xs(29px);
+    }
+    h2 {
+      font-size: get-vw-xs(24px);
+    }
+    h3 {
+      font-size: get-vw-xs(23px);
+    }
+    h4 {
+      font-size: get-vw-xs(22px);
+    }
+    h5 {
+      font-size: get-vw-xs(21px);
+    }
+    h6 {
+      font-size: get-vw-xs(20px);
+    }
+    p,
+    pre {
+      font-size: get-vw-xs(18px);
+      margin: 0 get-vw-xs(40px) get-vw-xs(40px) 0;
+      img {
+        margin: get-vw-xs(23px) 0 0 0;
+      }
+    }
+    ul {
+      margin: 0 get-vw-xs(40px) get-vw-xs(40px) 0;
+      li {
+        font-size: get-vw-xs(18px);
+      }
+    }
+    ol {
+      margin: 0 get-vw-xs(40px) get-vw-xs(40px) 0;
+      li {
+        font-size: get-vw-xs(18px);
+      }
+    }
+    blockquote {
+      margin: get-vw-xs(64px) 0 get-vw-xs(24px) 0;
+      padding: get-vw-xs(31px) 0 get-vw-xs(32px) 0;
+      &::before {
+        width: get-vw-xs(44px);
+        height: get-vw-xs(34px);
+        margin: get-vw-xs(16px) 0 0 get-vw-xs(52px);
+        font-size: get-vw-xs(100px);
+      }
+      .icon {
+        width: get-vw-xs(44px);
+        height: get-vw-xs(34px);
+        margin: 0 0 0 get-vw-xs(52px);
+      }
+      p {
+        font-size: get-vw-xs(22px);
+      }
+    }
+  }
+}
